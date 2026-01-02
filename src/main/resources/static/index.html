@@ -1,0 +1,44 @@
+<!-- src/main/resources/static/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>URL Shortener</h1>
+
+    <div class="card">
+      <label>Long URL</label>
+      <input id="urlInput" type="text" placeholder="https://example.com/some/long/path" />
+
+      <label>Expiry (minutes) <span class="hint">(optional)</span></label>
+      <input id="expiryInput" type="number" min="1" placeholder="e.g. 60 (1 hour) or leave empty" />
+
+      <button id="shortenBtn">Shorten</button>
+
+      <p id="error" class="error hidden"></p>
+
+      <div id="resultBox" class="result hidden">
+        <div class="row">
+          <div>
+            <div class="label">Short URL</div>
+            <a id="shortUrl" href="#" target="_blank" rel="noopener"></a>
+            <div class="meta" id="expiryText"></div>
+          </div>
+          <button id="copyBtn" class="secondary">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="small">Tip: open the short URL to see redirect + click counter</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
